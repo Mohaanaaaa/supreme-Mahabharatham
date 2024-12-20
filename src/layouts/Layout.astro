@@ -1,0 +1,95 @@
+---
+interface Props {
+	title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content="Mahabharatham - The Great Epic" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+		<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+	</head>
+	<body>
+		<nav>
+			<div class="nav-content">
+				<h1 class="logo">Mahabharatham</h1>
+				<div class="nav-links">
+					<a href="/">Home</a>
+					<a href="/characters">Characters</a>
+					<a href="/chapters">Chapters</a>
+				</div>
+			</div>
+		</nav>
+		<main>
+			<slot />
+		</main>
+		<footer>
+			<p>© 2024 Mahabharatham Stories. All rights reserved.</p>
+		</footer>
+	</body>
+</html>
+<style is:global>
+	:root {
+		--primary: #2c3e50;
+		--secondary: #34495e;
+		--accent: #e67e22;
+		--text: #2c3e50;
+		--background: #f5f6fa;
+	}
+	* {
+		margin: 0;
+		padding: 0;
+		box-sizing: border-box;
+	}
+	html {
+		font-family: 'Poppins', system-ui, sans-serif;
+		background: var(--background);
+		color: var(--text);
+	}
+	nav {
+		background: var(--primary);
+		color: white;
+		padding: 1rem 0;
+	}
+	.nav-content {
+		max-width: 1200px;
+		margin: 0 auto;
+		padding: 0 1rem;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+	.logo {
+		font-size: 1.5rem;
+		font-weight: 600;
+	}
+	.nav-links a {
+		color: white;
+		text-decoration: none;
+		margin-left: 2rem;
+	}
+	.nav-links a:hover {
+		color: var(--accent);
+	}
+	main {
+		max-width: 1200px;
+		margin: 2rem auto;
+		padding: 0 1rem;
+		min-height: calc(100vh - 180px);
+	}
+	footer {
+		background: var(--primary);
+		color: white;
+		text-align: center;
+		padding: 1rem;
+		margin-top: 2rem;
+	}
+</style>

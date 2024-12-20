@@ -1,0 +1,48 @@
+---
+interface Props {
+  title: string;
+  description: string;
+  id: string;
+}
+
+const { title, description, id } = Astro.props;
+---
+
+<div class="chapter-card">
+  <h2>{title}</h2>
+  <p>{description}</p>
+  <a href={`/chapters/${id}`} class="read-more">
+    Read Chapter →
+  </a>
+</div>
+
+<style>
+  .chapter-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    transition: transform 0.2s ease-in-out;
+  }
+  .chapter-card:hover {
+    transform: translateY(-5px);
+  }
+  .chapter-card h2 {
+    color: var(--primary);
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+  }
+  .chapter-card p {
+    color: var(--text);
+    margin-bottom: 1rem;
+  }
+  .read-more {
+    display: inline-block;
+    color: var(--accent);
+    text-decoration: none;
+    font-weight: 600;
+  }
+  .read-more:hover {
+    text-decoration: underline;
+  }
+</style>

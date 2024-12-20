@@ -1,0 +1,115 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Hero from '../components/Hero.astro';
+import FeaturedStoryCard from '../components/FeaturedStoryCard.astro';
+import { featuredStories } from '../data/featured-stories';
+---
+
+<Layout title="Mahabharatham - The Great Epic">
+  <Hero />
+
+  <section class="intro">
+    <h2>The Great Epic of India</h2>
+    <p>
+      The Mahabharata is one of the two major Sanskrit epics of ancient India, consisting of over 100,000 verses. 
+      This timeless tale explores the complex relationships between dharma (duty), karma (action), and moksha (liberation), 
+      through the story of two branches of a family - the Pandavas and Kauravas.
+    </p>
+  </section>
+
+  <section class="featured-stories">
+    <h2>Featured Stories</h2>
+    <div class="story-grid">
+      {featuredStories.map(story => (
+        <FeaturedStoryCard
+          title={story.title}
+          description={story.description}
+          image={story.image}
+          id={story.id}
+        />
+      ))}
+    </div>
+  </section>
+
+  <section class="quick-links">
+    <h2>Explore More</h2>
+    <div class="links-grid">
+      <a href="/chapters" class="quick-link">
+        <span class="icon">📚</span>
+        <h3>All Chapters</h3>
+        <p>Read all 18 books of the epic</p>
+      </a>
+      <a href="/characters" class="quick-link">
+        <span class="icon">👥</span>
+        <h3>Characters</h3>
+        <p>Meet the heroes and villains</p>
+      </a>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .intro {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 4rem;
+    padding: 0 1rem;
+  }
+  .intro h2 {
+    color: var(--primary);
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+  .intro p {
+    color: var(--text);
+    line-height: 1.6;
+  }
+  .featured-stories {
+    margin-bottom: 4rem;
+  }
+  .featured-stories h2 {
+    text-align: center;
+    color: var(--primary);
+    margin-bottom: 2rem;
+  }
+  .story-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+  }
+  .quick-links {
+    margin-bottom: 4rem;
+  }
+  .quick-links h2 {
+    text-align: center;
+    color: var(--primary);
+    margin-bottom: 2rem;
+  }
+  .links-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+  }
+  .quick-link {
+    background: white;
+    padding: 2rem;
+    border-radius: 1rem;
+    text-align: center;
+    text-decoration: none;
+    color: var(--text);
+    transition: transform 0.2s ease;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  }
+  .quick-link:hover {
+    transform: translateY(-5px);
+  }
+  .icon {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    display: block;
+  }
+  .quick-link h3 {
+    color: var(--primary);
+    margin-bottom: 0.5rem;
+  }
+</style>

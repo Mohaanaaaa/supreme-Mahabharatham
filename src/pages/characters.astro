@@ -1,0 +1,86 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const characters = [
+	{
+		name: "Pandavas",
+		members: [
+			"Yudhishthira - The eldest, known for his righteousness",
+			"Bhima - The strongest of the brothers",
+			"Arjuna - The skilled archer",
+			"Nakula - Master of sword fighting",
+			"Sahadeva - The wise one"
+		]
+	},
+	{
+		name: "Kauravas",
+		members: [
+			"Duryodhana - The eldest of the 100 brothers",
+			"Dushasana - The second eldest",
+			"Other brothers"
+		]
+	},
+	{
+		name: "Key Characters",
+		members: [
+			"Krishna - The divine guide",
+			"Bhishma - The grand patriarch",
+			"Dronacharya - The teacher of warfare",
+			"Karna - The tragic hero",
+			"Kunti - Mother of the Pandavas"
+		]
+	}
+];
+---
+
+<Layout title="Characters - Mahabharatham">
+	<h1>Characters of Mahabharatham</h1>
+	<div class="characters-grid">
+		{characters.map(group => (
+			<div class="character-group">
+				<h2>{group.name}</h2>
+				<ul>
+					{group.members.map(member => (
+						<li>{member}</li>
+					))}
+				</ul>
+			</div>
+		))}
+	</div>
+</Layout>
+
+<style>
+	h1 {
+		text-align: center;
+		margin-bottom: 3rem;
+		color: var(--primary);
+	}
+	.characters-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+		gap: 2rem;
+	}
+	.character-group {
+		background: white;
+		padding: 2rem;
+		border-radius: 1rem;
+		box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+	}
+	.character-group h2 {
+		color: var(--primary);
+		margin-bottom: 1rem;
+		font-size: 1.5rem;
+		border-bottom: 2px solid var(--accent);
+		padding-bottom: 0.5rem;
+	}
+	.character-group ul {
+		list-style: none;
+	}
+	.character-group li {
+		padding: 0.5rem 0;
+		border-bottom: 1px solid #eee;
+	}
+	.character-group li:last-child {
+		border-bottom: none;
+	}
+</style>

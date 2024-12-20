@@ -1,0 +1,41 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import ChapterCard from '../../components/ChapterCard.astro';
+import { chapters } from '../../data/chapters';
+---
+
+<Layout title="Chapters - Mahabharatham">
+  <h1>Chapters of Mahabharatham</h1>
+  <p class="intro-text">
+    The Mahabharata is divided into 18 major books (parvas), each focusing on different aspects 
+    of the epic. Explore each chapter to delve deeper into this timeless story.
+  </p>
+  <div class="chapters-grid">
+    {chapters.map(chapter => (
+      <ChapterCard
+        title={chapter.title}
+        description={chapter.description}
+        id={chapter.id}
+      />
+    ))}
+  </div>
+</Layout>
+
+<style>
+  h1 {
+    text-align: center;
+    margin-bottom: 1rem;
+    color: var(--primary);
+  }
+  .intro-text {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 3rem;
+    color: var(--secondary);
+  }
+  .chapters-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+  }
+</style>

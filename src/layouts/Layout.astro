@@ -36,7 +36,7 @@ const { title } = Astro.props;
 			</div>
 		</nav>
 		<!-- Audio element -->
-    <audio id="mahabharata-audio" src="/mahabharata-narration.mp3"></audio>
+    	<audio id="mahabharata-audio" src="/mahabharata-narration.mp3"></audio>
 		<main>
 			<slot />
 		</main>
@@ -53,7 +53,7 @@ const { title } = Astro.props;
 					});
 				}
 			};
-    </script>
+    	</script>
 	</body>
 </html>
 <style is:global>
@@ -113,48 +113,49 @@ const { title } = Astro.props;
 		margin-top: 2rem;
 	}
 	/* Dropdown Styles */
-.dropdown {
-    position: relative;
-    display: inline-block; /* Set to inline-block to keep it in line */
-}
-.dropbtn {
-    background-color: transparent; /* No background to blend with nav */
-    color: white; /* Text color */
-    border: none; /* Remove borders */
-    cursor: pointer; /* Hand cursor on hover */
-    margin-left: 2rem; /* Spacing for aesthetic */
-    font-size: 1rem; /* Font size, consistent with links */
-}
-.dropdown-content {
-    display: none; /* Initially hidden */
-    position: absolute; /* Position dropdown relative to parent */
-    background-color: var(--primary); /* Same as nav background */
-    min-width: 160px; /* Width of the dropdown */
-    z-index: 1; /* Ensures it's on top of other elements */
-}
-.dropdown-content a {
-    color: white; /* Link color */
-    padding: 12px 16px; /* Padding for links */
-    text-decoration: none; /* Remove underlines */
-    display: block; /* Each link takes full width */
-}
-.dropdown-content a:hover {
-    background-color: var(--primary); /* Change background on hover */
-}
-.dropdown:hover .dropdown-content {
-    display: block; /* Show dropdown on hover */
-}
-main {
-    max-width: 1200px;
-    margin: 2rem auto; /* Centered with auto margins */
-    padding: 0 1rem;
-    min-height: calc(100vh - 180px);
-}
-footer {
-    background: var(--primary);
-    color: white;
-    text-align: center;
-    padding: 1rem;
-    margin-top: 2rem;
-}
+
+	.dropdown {
+		position: relative;
+		display: inline-block; /* Set to inline-block to keep it in line */
+	}
+	.dropbtn {
+		background-color: transparent; /* No background to blend with nav */
+		color: white; /* Text color */
+		border: none; /* Remove borders */
+		cursor: pointer; /* Hand cursor on hover */
+		margin-left: 2rem; /* Spacing for aesthetic */
+		font-size: 1rem; /* Font size, consistent with links */
+	}
+	.dropdown-content {
+		display: none; /* Initially hidden */
+		position: absolute; /* Position dropdown relative to parent */
+		background-color: var(--primary); /* Same as nav background */
+		min-width: 160px; /* Width of the dropdown */
+		z-index: 1; /* Ensures it's on top of other elements */
+	}
+	.dropdown-content a {
+		color: white; /* Link color */
+		padding: 12px 16px; /* Padding for links */
+		text-decoration: none; /* Remove underlines */
+		display: block; /* Each link takes full width */
+	}
+	.dropdown-content a:hover {
+		background-color: var(--primary); /* Change background on hover */
+	}
+	.dropdown:hover .dropdown-content {
+		display: block; /* Show dropdown on hover */
+	}
+	main {
+		max-width: 1200px;
+		margin: 2rem auto; /* Centered with auto margins */
+		padding: 0 1rem;
+		min-height: calc(100vh - 180px);
+	}
+	footer {
+		background: var(--primary);
+		color: white;
+		text-align: center;
+		padding: 1rem;
+		margin-top: 2rem;
+	}
 </style>
